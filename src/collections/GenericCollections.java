@@ -48,7 +48,9 @@ public class GenericCollections {
 		
 		Collections.sort(list);
 		
-		return 0;
+		int uniqueCount = (int) list.stream().distinct().count();
+		
+		return uniqueCount;
 	}
 	
 	public static void removeEntryNthElement(List<?> list, int n) {
