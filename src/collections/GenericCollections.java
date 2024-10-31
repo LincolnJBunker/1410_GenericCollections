@@ -52,6 +52,17 @@ public class GenericCollections {
 	}
 	
 	public static void removeEntryNthElement(List<?> list, int n) {
+		if (n <= 0) {
+			throw new IllegalArgumentException("n needs to be a possitive number");
+		}
+		if (list == null) {
+			throw new NullPointerException("List cannot be null");
+		}
 		
+		for (int i = list.size() - 1; i >= 0; i--) {
+			if ((i + 1) % n == 0) {
+				list.remove(i);
+			}
+		}
 	}
 }
